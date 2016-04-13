@@ -45,6 +45,9 @@ gem 'bootstrap-sass'
 #Gem valida emails
 gem 'validates_email_format_of'
 
+#Font awesome
+gem 'font-awesome-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
