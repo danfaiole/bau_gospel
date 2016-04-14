@@ -211,3 +211,5 @@ pt-BR:
           attributes:
             email:
               invalid_email_address: "Endereço de e-mail inválido"
+  navbar:
+    signup: "Registre-se"
