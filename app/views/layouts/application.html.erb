@@ -51,10 +51,8 @@
     </nav>
   </div>
 </header>
-<div id='body_container'>
-  <div class="container">
+  <%= body_container_div do %>
     <%= yield %>
-  </div>
-</div>
+  <% end %>
 </body>
 </html>
