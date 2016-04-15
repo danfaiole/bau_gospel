@@ -42,6 +42,9 @@ gem 'bcrypt', '~> 3.1.7'
 #Bootstrap
 gem 'bootstrap-sass'
 
+#Bootstrap Form
+gem 'bootstrap_form'
+
 #Gem valida emails
 gem 'validates_email_format_of'
 

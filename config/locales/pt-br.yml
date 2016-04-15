@@ -209,7 +209,12 @@ pt-BR:
       models:
         user:
           attributes:
+            name: "Nome"
+            last_name: "Sobrenome"
+            password: "Senha"
+            password_confirmation: "Confirmação de Senha"
             email:
               invalid_email_address: "Endereço de e-mail inválido"
+              label: "E-mail"
   navbar:
     signup: "Registre-se"
