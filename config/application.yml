@@ -1,5 +1,10 @@
-default_mail: "default mail here"
-smtp_address: "smtp address here"
-mail_domain: "mail domain here"
-mail_username: "mail username here"
-mail_password: "mail password here"
+default_mail: "default_mail"
+smtp_address: "smtp"
+mail_domain: "mail_domain"
+mail_username: "username"
+mail_password: "password"
+
+development:
+  host_name: "localhost:3000"
+production:
+  host_name: "hostname"

@@ -34,5 +34,8 @@ module Workspace
       :password       => ENV['mail_password'],
       :authentication => :plain
     }
+
+    #Configuração para o link que é enviado no email
+    config.action_mailer.default_url_options = { host: ENV['host_name'] }
   end
 end
