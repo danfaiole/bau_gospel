@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :posts
-  resources :users
+  resources :users do
+    get :confirmation_email, on: :member
+  end
   get 'home/index'
 
   root 'home#index'

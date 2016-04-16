@@ -1,6 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def confirmation_email
+    user = User.find_by(confirmation_token: params[:id])
+    if user
+      user.email_activate
+      flash[:success] = t('actioncontroller.flash.user.confirmation_success')
+      redirect_to login_url
+    else
+      flash[:danger] = t('actioncontroller.flash.user.confirmation_fail')
+      redirect_to root_url
+    end
+  end
+
   # GET /users
   def index
     @users = User.all
@@ -24,7 +36,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      UserMailer.confirmation_email(@user).deliver_now
+      flash[:success] = t('actioncontroller.flash.user.success', email: @user.email)
+      redirect_to root_url
     else
       render :new
     end

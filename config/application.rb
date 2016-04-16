@@ -23,5 +23,16 @@ module Workspace
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.action_mailer.delivery_method = :smtp
+    # SMTP settings for mailgun
+    ActionMailer::Base.smtp_settings = {
+      :port           => 587,
+      :address        => ENV['smtp_address'],
+      :domain         => ENV['mail_domain'],
+      :user_name      => ENV['mail_username'],
+      :password       => ENV['mail_password'],
+      :authentication => :plain
+    }
   end
 end

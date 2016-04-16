@@ -218,3 +218,14 @@ pt-BR:
               label: "E-mail"
   navbar:
     signup: "Registre-se"
+  user_mailer:
+    confirmation_email:
+      subject: "Confirmação de Cadastro"
+      content: "Obrigado por registrar em nosso site! Para ativar sua conta basta clicar no link abaixo:\n"
+      link: "Clique aqui para ativar a conta"
+  actioncontroller:
+    flash:
+      user:
+        success: "Um email de confimação foi enviado para %{email}. Por favor confirme o cadastro para continuar."
+        confirmation_success: "Conta ativada com sucesso! Efetue o login para continuar."
+        confirmation_fail: "Este link de validação já foi usado ou já venceu, favor efetuar seu cadastro novamente."

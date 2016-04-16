@@ -51,6 +51,9 @@ gem 'validates_email_format_of'
 #Font awesome
 gem 'font-awesome-rails'
 
+#Figaro for easy config
+gem 'figaro'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

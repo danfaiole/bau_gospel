@@ -1,0 +1,2 @@
+<%= t('user_mailer.confirmation_email.content')%>
+<%= link_to(t('user_mailer.confirmation_email.link'), confirmation_email_user_url(id: @user.confirmation_token)) %>

@@ -1,0 +1,5 @@
+default_mail: "default mail here"
+smtp_address: "smtp address here"
+mail_domain: "mail domain here"
+mail_username: "mail username here"
+mail_password: "mail password here"

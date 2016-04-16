@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
 
   before_create {generate_token(:confirmation_token)}
 
+  def email_activate
+    self.confirmation_token = nil
+    save!(:validate => false)
+  end
   
   def full_name
     "#{self.name} - #{self.last_name}"
