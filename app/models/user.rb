@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true, length: { minimum: 6}
 
   before_create {generate_token(:confirmation_token)}
+  before_create {generate_token(:auth_token)}
 
   def email_activate
     self.confirmation_token = nil

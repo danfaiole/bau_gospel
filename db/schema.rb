@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160414121333) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "confirmation_token"
+    t.string   "auth_token"
     t.string   "login",              limit: 255
   end
 

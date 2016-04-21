@@ -224,8 +224,18 @@ pt-BR:
       content: "Obrigado por registrar em nosso site! Para ativar sua conta basta clicar no link abaixo:\n"
       link: "Clique aqui para ativar a conta"
   actioncontroller:
+    session:
+      title: "Login"
+      submit: "Entrar"
+      signup: "Cadastre-se"
+      remember_me: "Continuar Logado"
     flash:
       user:
         success: "Um email de confimação foi enviado para %{email}. Por favor confirme o cadastro para continuar."
         confirmation_success: "Conta ativada com sucesso! Efetue o login para continuar."
         confirmation_fail: "Este link de validação já foi usado ou já venceu, favor efetuar seu cadastro novamente."
+      session:
+        wrong_password: "Senha ou e-mail incorreta"
+        not_confirmed: "Sua conta ainda não foi ativada, para acessar confirme sua conta."
+        logged_in: "Bem Vindo %{name}!"
+        logged_out: "Saiu com sucesso!"
