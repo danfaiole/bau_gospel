@@ -227,7 +227,6 @@ pt-BR:
     session:
       title: "Login"
       submit: "Entrar"
-      signup: "Cadastre-se"
       remember_me: "Continuar Logado"
     flash:
       user:

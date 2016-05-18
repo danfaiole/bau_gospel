@@ -24,7 +24,7 @@
           <%= link_to(t('navbar.signup'), new_user_path) %>
         </li>
         <li>
-          <a href="#">Category</a>
+          <%= link_to(t('actioncontroller.session.login'), login_path) %>
         </li>
         <li>
           <a href="#">Category</a>
@@ -52,7 +52,7 @@
   </div>
 </header>
   <%= body_container_div do %>
-    
+
     <div class='flash-messages col-sm-12 col-md-12 col-lg-12'>
       <% flash.each do |key, value| %>
         <div class="alert alert-dismissible alert-<%= key %>">
