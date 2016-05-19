@@ -7,10 +7,11 @@ class SessionController < ApplicationController
     if user && user.authenticate(params[:password])
       if user.confirmation_token.blank? || user.confirmation_token.nil?
 
-        if params[:remember_me]
+        if params[:remember_me] == 1
           cookies.permanent[:auth_token] = user.auth_token
+          cookies.signed[:user_id] = user.id
         else
-          cookies[:auth_token] = user.auth_token
+          session[:user_id] = user.id
         end
 
         flash[:success] = t('actioncontroller.flash.session.logged_in', name: user.name)
@@ -26,7 +27,9 @@ class SessionController < ApplicationController
   end
 
   def destroy
-    cookies.delete :auth_token
+    session.delete(:user_id)
+    cookies.delete(:auth_token) if cookies[:auth_token].present?
+    cookies.delete(:user_id) if cookies.signed[:user_id].present?
 
     flash[:success] = t('actioncontroller.flash.session.logged_out')
     redirect_to root_url
