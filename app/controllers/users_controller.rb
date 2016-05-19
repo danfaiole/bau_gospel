@@ -5,10 +5,10 @@ class UsersController < ApplicationController
     user = User.find_by(confirmation_token: params[:id])
     if user
       user.email_activate
-      flash[:success] = t('actioncontroller.flash.user.confirmation_success')
+      flash[:success] = t('user.controller.confirmation_success')
       redirect_to login_url
     else
-      flash[:danger] = t('actioncontroller.flash.user.confirmation_fail')
+      flash[:danger] = t('user.controller.confirmation_fail')
       redirect_to root_url
     end
   end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
     if @user.save
       UserMailer.confirmation_email(@user).deliver_now
-      flash[:success] = t('actioncontroller.flash.user.success', email: @user.email)
+      flash[:success] = t('user.controller.success', email: @user.email)
       redirect_to root_url
     else
       render :new
@@ -67,6 +67,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :last_name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :last_name, :email, :password, :password_confirmation, :login)
     end
 end

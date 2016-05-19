@@ -3,7 +3,7 @@ class SessionController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:login]) || User.find_by(login: params[:login])
+    user = User.find_by(email: params[:email]) || User.find_by(login: params[:email])
     if user && user.authenticate(params[:password])
       if user.confirmation_token.blank? || user.confirmation_token.nil?
 

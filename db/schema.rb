@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160518214300) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "images", force: :cascade do |t|
     t.string   "file_file_name"
     t.string   "file_content_type"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160518214300) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",               limit: 255
@@ -45,4 +48,5 @@ ActiveRecord::Schema.define(version: 20160518214300) do
     t.string   "login",              limit: 255
   end
 
+  add_foreign_key "posts", "users"
 end

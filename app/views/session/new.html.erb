@@ -7,15 +7,15 @@
         </div>
           <div class="panel-body">
             <%= bootstrap_form_tag url: session_index_path do |f| %>
-              <%= f.text_field :email, label: t('activerecord.attributes.user.email') %>
-              <%= f.password_field :password, label: t('activerecord.attributes.user.password') %>
+              <%= f.text_field :email, label: t('session.view.email') %>
+              <%= f.password_field :password, label: t('session.view.password') %>
 
               <%= f.form_group :remember_me do %>
-                <%= f.check_box :remember_me, label: t('actioncontroller.session.remember_me') %>
+                <%= f.check_box :remember_me, label: t('session.view.remember_me') %>
               <% end %>
 
-              <%= f.submit t('actioncontroller.session.submit'), class: 'btn btn-success' %>
-              <%= link_to t('actioncontroller.session.signup'), signup_path, class: 'btn btn-default' %>
+              <%= f.submit t('session.view.submit'), class: 'btn btn-success' %>
+              <%= link_to t('session.view.signup'), signup_path, class: 'btn btn-default' %>
             <% end %>
           </div>
       </div>

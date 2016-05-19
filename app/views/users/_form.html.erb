@@ -1,20 +1,9 @@
 <%= bootstrap_form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-    <%= f.text_field :name, label: t('activerecord.attributes.user.name') %>
-    <%= f.text_field :last_name, label: t('activerecord.attributes.user.last_name') %>
-    <%= f.text_field :email, label: t('activerecord.attributes.user.email.label') %>
-    <%= f.password_field :password, label: t('activerecord.attributes.user.password') %>
-    <%= f.password_field :password_confirmation, label: t('activerecord.attributes.user.password_confirmation') %>
-    <%= f.submit %>
+  <%= f.text_field :email, label: t('user.view.new.email') %>
+  <%= f.text_field :login, label: t('user.view.new.login') %>
+  <%= f.text_field :name, label: t('user.view.new.name') %>
+  <%= f.text_field :last_name, label: t('user.view.new.last_name') %>
+  <%= f.password_field :password, label: t('user.view.new.password') %>
+  <%= f.password_field :password_confirmation, label: t('user.view.new.password_confirmation') %>
+  <%= f.submit %>
 <% end %>
