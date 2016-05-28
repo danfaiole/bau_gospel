@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?, except: [:show]
 
   # GET /posts
   def index
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @post.user_id = current_user.id
   end
 
   # GET /posts/1/edit

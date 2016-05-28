@@ -14,14 +14,14 @@ class SessionController < ApplicationController
           session[:user_id] = user.id
         end
 
-        flash[:success] = t('actioncontroller.flash.session.logged_in', name: user.name)
+        flash[:success] = t('session.controller.logged_in', name: user.name)
         redirect_to root_url
       else
-        flash.now[:danger] = t('actioncontroller.flash.session.not_confirmed')
+        flash.now[:danger] = t('session.controller.not_confirmed')
         render :new
       end
     else
-      flash[:danger] = t('actioncontroller.flash.session.wrong_password')
+      flash[:danger] = t('session.controller.wrong_password')
       render :new
     end
   end
@@ -31,7 +31,7 @@ class SessionController < ApplicationController
     cookies.delete(:auth_token) if cookies[:auth_token].present?
     cookies.delete(:user_id) if cookies.signed[:user_id].present?
 
-    flash[:success] = t('actioncontroller.flash.session.logged_out')
+    flash[:success] = t('session.controller.logged_out')
     redirect_to root_url
   end
 end
